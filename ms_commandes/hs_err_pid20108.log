@@ -1,0 +1,203 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 266338304 bytes for Failed to commit area from 0x0000000703e00000 to 0x0000000713c00000 of length 266338304.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (src/hotspot/os/windows/os_windows.cpp:3627), pid=20108, tid=11452
+#
+# JRE version:  (11.0.15) (build )
+# Java VM: OpenJDK 64-Bit Server VM (11.0.15+0-b2043.56-9505619, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Xverify:none -XX:TieredStopAtLevel=1 com.ms.commande.ApiSbApplication
+
+Host: 11th Gen Intel(R) Core(TM) i7-11370H @ 3.30GHz, 8 cores, 15G,  Windows 11 , 64 bit Build 22621 (10.0.22621.2506)
+Time: Mon Dec 25 16:41:55 2023 Morocco Daylight Time elapsed time: 0.029225 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000026318466800):  JavaThread "Unknown thread" [_thread_in_vm, id=11452, stack(0x000000a3ec800000,0x000000a3ec900000)]
+
+Stack: [0x000000a3ec800000,0x000000a3ec900000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x64135a]
+V  [jvm.dll+0x7d39f9]
+V  [jvm.dll+0x7d51b9]
+V  [jvm.dll+0x7d58a3]
+V  [jvm.dll+0x2691c5]
+V  [jvm.dll+0x63e4e9]
+V  [jvm.dll+0x632985]
+V  [jvm.dll+0x3231ac]
+V  [jvm.dll+0x323032]
+V  [jvm.dll+0x327c06]
+V  [jvm.dll+0x36ffa2]
+V  [jvm.dll+0x36fa01]
+V  [jvm.dll+0x2fea28]
+V  [jvm.dll+0x2ffb25]
+V  [jvm.dll+0x7accd7]
+V  [jvm.dll+0x7ae49f]
+V  [jvm.dll+0x37d299]
+V  [jvm.dll+0x78ef9f]
+V  [jvm.dll+0x3ec847]
+V  [jvm.dll+0x3eed31]
+C  [jli.dll+0x52cb]
+C  [ucrtbase.dll+0x29363]
+C  [KERNEL32.DLL+0x1257d]
+C  [ntdll.dll+0x5aa58]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00000263162b0de0, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000002631847f800 GCTaskThread "GC Thread#0" [stack: 0x000000a3ec900000,0x000000a3eca00000] [id=16992]
+  0x00000263184de000 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000a3eca00000,0x000000a3ecb00000] [id=16364]
+  0x00000263184e1800 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000a3ecb00000,0x000000a3ecc00000] [id=6896]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffa542ff3e7]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000263184635f0] Heap_lock - owner thread: 0x0000026318466800
+
+Heap address: 0x0000000703e00000, size: 4034 MB, Compressed Oops mode: Non-zero based: 0x0000000703e00000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (1 events):
+Event: 0.012 Loaded shared library C:\Program Files\Android\Android Studio\jbr\bin\zip.dll
+
+
+Dynamic libraries:
+0x00007ff793580000 - 0x00007ff79358a000 	C:\Program Files\Android\Android Studio\jbr\bin\java.exe
+0x00007ffb03e10000 - 0x00007ffb04027000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffaf4a20000 - 0x00007ffaf4a39000 	C:\Program Files\AVG\Antivirus\aswhook.dll
+0x00007ffb02050000 - 0x00007ffb02114000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffb01660000 - 0x00007ffb01a06000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffb012f0000 - 0x00007ffb01401000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffaf8d50000 - 0x00007ffaf8d6b000 	C:\Program Files\Android\Android Studio\jbr\bin\VCRUNTIME140.dll
+0x00007ffafb8b0000 - 0x00007ffafb8c7000 	C:\Program Files\Android\Android Studio\jbr\bin\jli.dll
+0x00007ffb02f90000 - 0x00007ffb0313e000 	C:\Windows\System32\USER32.dll
+0x00007ffb01a90000 - 0x00007ffb01ab6000 	C:\Windows\System32\win32u.dll
+0x00007ffb004a0000 - 0x00007ffb00733000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.2506_none_270c5ae97388e100\COMCTL32.dll
+0x00007ffb01b60000 - 0x00007ffb01b89000 	C:\Windows\System32\GDI32.dll
+0x00007ffb01c50000 - 0x00007ffb01cf7000 	C:\Windows\System32\msvcrt.dll
+0x00007ffb01410000 - 0x00007ffb01528000 	C:\Windows\System32\gdi32full.dll
+0x00007ffb01ac0000 - 0x00007ffb01b5a000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffb03c10000 - 0x00007ffb03c41000 	C:\Windows\System32\IMM32.DLL
+0x00007ffafd040000 - 0x00007ffafd04c000 	C:\Program Files\Android\Android Studio\jbr\bin\vcruntime140_1.dll
+0x00007ffae7f10000 - 0x00007ffae7f9d000 	C:\Program Files\Android\Android Studio\jbr\bin\msvcp140.dll
+0x00007ffa53ff0000 - 0x00007ffa54bac000 	C:\Program Files\Android\Android Studio\jbr\bin\server\jvm.dll
+0x00007ffb01b90000 - 0x00007ffb01c41000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffb01db0000 - 0x00007ffb01e55000 	C:\Windows\System32\sechost.dll
+0x00007ffb03a00000 - 0x00007ffb03b17000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffb03640000 - 0x00007ffb03648000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffaf76c0000 - 0x00007ffaf76f4000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffadb520000 - 0x00007ffadb529000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffaf6900000 - 0x00007ffaf690a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffb03140000 - 0x00007ffb031b1000 	C:\Windows\System32\WS2_32.dll
+0x00007ffaff880000 - 0x00007ffaff898000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ffafb550000 - 0x00007ffafb560000 	C:\Program Files\Android\Android Studio\jbr\bin\verify.dll
+0x00007ffb00af0000 - 0x00007ffb00d23000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ffb03650000 - 0x00007ffb039d9000 	C:\Windows\System32\combase.dll
+0x00007ffb02440000 - 0x00007ffb02517000 	C:\Windows\System32\OLEAUT32.dll
+0x00007ffb00940000 - 0x00007ffb00972000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ffb01a10000 - 0x00007ffb01a8a000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffaf84d0000 - 0x00007ffaf84f8000 	C:\Program Files\Android\Android Studio\jbr\bin\java.dll
+0x00007ffafa4f0000 - 0x00007ffafa4fa000 	C:\Program Files\Android\Android Studio\jbr\bin\jimage.dll
+0x00007ffaf8d30000 - 0x00007ffaf8d48000 	C:\Program Files\Android\Android Studio\jbr\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Android\Android Studio\jbr\bin;C:\Windows\SYSTEM32;C:\Program Files\AVG\Antivirus;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.2506_none_270c5ae97388e100;C:\Program Files\Android\Android Studio\jbr\bin\server
+
+VM Arguments:
+jvm_args: -Xverify:none -XX:TieredStopAtLevel=1 
+java_command: com.ms.commande.ApiSbApplication
+java_class_path (initial): C:\Users\hatim\OneDrive\Bureau\devoir-microservices\ms_commandes\target\classes;C:\Users\hatim\.m2\repository\org\springframework\cloud\spring-cloud-starter-netflix-eureka-client\3.1.7\spring-cloud-starter-netflix-eureka-client-3.1.7.jar;C:\Users\hatim\.m2\repository\org\springframework\cloud\spring-cloud-starter\3.1.7\spring-cloud-starter-3.1.7.jar;C:\Users\hatim\.m2\repository\org\springframework\security\spring-security-rsa\1.0.11.RELEASE\spring-security-rsa-1.0.11.RELEASE.jar;C:\Users\hatim\.m2\repository\org\bouncycastle\bcpkix-jdk15on\1.69\bcpkix-jdk15on-1.69.jar;C:\Users\hatim\.m2\repository\org\bouncycastle\bcprov-jdk15on\1.69\bcprov-jdk15on-1.69.jar;C:\Users\hatim\.m2\repository\org\bouncycastle\bcutil-jdk15on\1.69\bcutil-jdk15on-1.69.jar;C:\Users\hatim\.m2\repository\org\springframework\cloud\spring-cloud-netflix-eureka-client\3.1.7\spring-cloud-netflix-eureka-client-3.1.7.jar;C:\Users\hatim\.m2\repository\com\netflix\eureka\eureka-client\1.10.17\eureka-client-1.10.17.jar;C:\Users\hatim\.m2\repository\com\netflix\netflix-commons\netflix-eventbus\0.3.0\netflix-eventbus-0.3.0.jar;C:\Users\hatim\.m2\repository\com\netflix\netflix-commons\netflix-infix\0.3.0\netflix-infix-0.3.0.jar;C:\Users\hatim\.m2\repository\commons-jxpath\commons-jxpath\1.3\commons-jxpath-1.3.jar;C:\Users\hatim\.m2\repository\joda-time\joda-time\2.3\joda-time-2.3.jar;C:\Users\hatim\.m2\repository\org\antlr\antlr-runtime\3.4\antlr-runtime-3.4.jar;C:\Users\hatim\.m2\repository\org\antlr\stringtemplate\3.2.1\stringtemplate-3.2.1.jar;C:\Users\hatim\.m2\repository\com\google\code\gson\gson\2.9.1\gson-2.9.1.jar;C:\Users\hatim\.m2\repository\org\apache\commons\commons-math\2.2\commons-math-2.2.jar;C:\Users\hatim\.m2\repository\com\thoughtworks\xstream\xstream\1.4.18\xstream-1.4.18.jar;C:\Users\hatim\.m2\repository\io\github\x-stream\mxparser\1.2.2\mxparser-1.2.2.jar;C:\Users\hatim\.m2\repository\xmlpull\xmlpull\1.1.3.1\xmlpull-1.1.3.1.jar;C:\Users\hatim\.m2\repository
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     bool BytecodeVerificationLocal                = false                                     {product} {command line}
+     bool BytecodeVerificationRemote               = false                                     {product} {command line}
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 266338304                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4229955584                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 7549744                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 244108496                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 0                                      {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     intx TieredStopAtLevel                        = 1                                         {product} {command line}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Android\Android Studio\jbr
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\VMware\VMware Player\bin\;C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin;C:\Program Files\Android\Android Studio\jbr\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\nodejs\;E:\flutter\bin;C:\Users\hatim\AppData\Local\Pub\Cache\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Users\hatim\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\hatim\AppData\Local\Programs\Python\Python37\;C:\Users\hatim\AppData\Local\Microsoft\WindowsApps;C:\Users\hatim\AppData\Roaming\npm;E:\flutter\bin;E:\flutter\bin\cache\dart-sdk\bin;C:\Users\hatim\AppData\Local\Pub\Cache\bin;E:\flutter\bin\cache\artifacts\gradle_wrapper;C:\Program Files\heroku\bin;C:\apache-maven-3.9.6\bin;;G:\IntelliJ IDEA 2023.3.2\bin;
+USERNAME=hatim
+LANG=en_US.UTF-8
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 11 , 64 bit Build 22621 (10.0.22621.2506)
+OS uptime: 1 days 20:32 hours
+Hyper-V role detected
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 140 stepping 1 microcode 0xa4, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx, evex, sha, fma
+
+Memory: 4k page, system-wide physical 16129M (2029M free)
+TotalPageFile size 23332M (AvailPageFile size 199M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 58M, peak: 312M
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.15+0-b2043.56-9505619) for windows-amd64 JRE (11.0.15+0-b2043.56-9505619), built on Jan 19 2023 02:48:00 by "builduser" with unknown MS VC++:1929
+
+END.
